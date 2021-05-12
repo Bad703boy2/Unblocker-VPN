@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color: #5AB077;
+    --secondary-color: #499763;
+    --dark-color: #2D5D3D;
+    --light-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: var(--primary-color);
+    color: #000;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: #000;
+    padding: 10px;
+    margin: 0 3px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #000 solid;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+/* Showcase */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #000;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    overflow: visible;
+    grid-template-columns: 55% auto;
+    gap: 30px;
+}
+
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100x;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+  }
+
+.showcase > * {
+    z-index: 100;
+}
+
+/* Benefits */
+.benefits {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.benefits .grid {
+    grid-template-columns: 4fr, 3fr;
+}
+
+.benefits-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.benefits .grid .h3 {
+    font-size: 35px;
+}
+
+.benefits .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Devices */
+.devices .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 2fr);
+}
+
+.devices .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+
+/* Products */
+
+.products .flex {
+    flex-wrap: wrap;
+}
+
+.products .card {
+    text-align: center;
+    margin: 18px 10px 50px;
+    transition: transform 0.1s ease-in;
+}
+
+.products .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.products .card:hover{
+    transform: translateY(-20px);
+}
+
+
+/* Features */
+.features-head img {
+   width: 350px;
+   justify-self: flex-end;
+}
+
+.features-sub-head img {
+    width: 750px;
+   justify-self: flex-end;
+}
+
+.features-main .card > i {
+    margin-right: 20px;
+}
+
+.features-main .grid {
+    padding: 30px;
+}
+
+/* What is VPN */
+.vpn-main h3 {
+    margin: 20px 0;
+}
+
+.vpn-main .grid {
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.vpn-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #000 solid;
+}
+
+.vpn-main a:hover {
+    font-weight: bold;
+}
+
+/* Footer */
+.footer .social a {
+    margin: 0px 10px;
+}
+
+/*  Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}   
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}   
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}   
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%)
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}   
+
+/* Tablets and under */
+@media(max-width: 768px) {
+    .grid,
+    .showcase .grid,
+    .features .grid,
+    .devices .grid,
+    .products .grid,
+    .features-main .grid,
+    .vpn-main .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
+    }
+
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+        animation: slideInFromBottom 1s ease-in;
+    }
+    
+    .devices .grid > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+    .features-head,
+    .features-sub-head,
+    .vpn-head {
+        text-align: center;
+    }
+
+    .features-head img,
+    .features-sub-head img,
+    .vpn-head img {
+        justify-self: center;
+    }
+
+/* Mobile */
+@media(max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar .ul {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
